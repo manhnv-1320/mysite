@@ -1,2 +1,8 @@
+from django.urls import path
 
-urlpatterns = []
+from . import views
+
+app_name = 'catalog'
+urlpatterns = [
+    path('', views.index, name='index'),
+]
