@@ -1,5 +1,6 @@
 {% extends "base_generic.html" %}
 {% load i18n %}
+{%  load static %}
 {% block css %}
     <link rel="stylesheet" type="text/css" href="{% static 'css/book_detail.css' %}">
 {% endblock %}
@@ -14,7 +15,7 @@
         </a>
     </p>
     <p><strong>{% translate 'Summary:' %}</strong>
-        {% blocktranslate with summary = book.summary %}
+        {% blocktranslate with summary=book.summary %}
             {{ summary }}
         {% endblocktranslate %}
     </p>
@@ -22,12 +23,12 @@
         {{ book.isbn }}
     </p>
     <p><strong>{% translate 'Language:' %}</strong>
-        {% blocktranslate with language = book.language %}
+        {% blocktranslate with language=book.language %}
             {{ language }}
         {% endblocktranslate %}
     </p>
     <p><strong>{% translate 'Genre:' %}</strong>
-        {% blocktranslate with genre = book.genre.all|join:", " %}
+        {% blocktranslate with genre=book.genre.all|join:", " %}
             {{ genre }}
         {% endblocktranslate %}
     </p>
@@ -36,7 +37,7 @@
         {% for copy in book.bookinstance_set.all %}
             <hr>
             <p class="{% if copy.status == 'a' %}text-success{% elif copy.status == 'm' %}text-danger{% else %}text-warning{% endif %}">
-                {% blocktranslate with copy = copy.get_status_display %}
+                {% blocktranslate with copy=copy.get_status_display %}
                     {{ copy }}
                 {% endblocktranslate %}
             </p>
@@ -44,7 +45,7 @@
                 <p><strong>{% translate 'Due to be returned:' %}</strong> {{ copy.due_back }}</p>
             {% endif %}
             <p><strong>{% translate 'Imprint:' %}</strong>
-                {% blocktranslate with imprint = copy.imprint %}
+                {% blocktranslate with imprint=copy.imprint %}
                     {{ imprint }}
                 {% endblocktranslate %}
             </p>
