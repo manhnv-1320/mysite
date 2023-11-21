@@ -187,6 +187,11 @@ msgstr "Bản sao có sẵn:"
 msgid "Authors:"
 msgstr "Tác giả:"
 
+#: .\catalog\templates\index.html:14
+#, python-format
+msgid "You have visited this page %(num)s time"
+msgstr "Bạn đã truy cập trang này %(num)s lần"
+
 #: .\locallibrary\settings.py:119
 msgid "English"
 msgstr ""
