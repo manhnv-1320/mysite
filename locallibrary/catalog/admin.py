@@ -1,7 +1,5 @@
 from django.contrib import admin
 
-from django.contrib import admin
-
 from .models import Author, Genre, Book, BookInstance
 
 
@@ -29,13 +27,17 @@ class BookAdmin(admin.ModelAdmin):
 
 @admin.register(BookInstance)
 class BookInstanceAdmin(admin.ModelAdmin):
-    list_display = ('book', 'imprint', 'status', 'due_back')
+    list_display = ('book', 'imprint', 'status', 'due_back', 'borrower')
     list_filter = ('status', 'due_back')
     fieldsets = (
         (None, {
-            'fields': ('book', 'imprint', 'id')
+            'fields': ('book', 'imprint', 'id', 'borrower')
         }),
         ('Availability', {
             'fields': ('status', 'due_back')
         }),
+    )
+    readonly_fields = (
+        'id',
+        'borrower',
     )
