@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-21 09:16+0700\n"
+"POT-Creation-Date: 2023-11-21 14:23+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,135 +18,131 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: .\catalog\models.py:11
+#: .\catalog\models.py:13
 msgid "Enter a book genre (e.g.Science Fiction)"
 msgstr "Nhập thể loại sách (ví dụ: Khoa học viễn tưởng)"
 
-#: .\catalog\models.py:42
+#: .\catalog\models.py:44
 msgid "Enter a brief description of the book"
 msgstr "Nhập mô tả ngắn gọn về cuốn sách"
 
-#: .\catalog\models.py:43
+#: .\catalog\models.py:45
 msgid ""
 "13 Character <a href=\"https://www.isbn-international.org/content/what-isbn"
 "\">ISBN number</a>"
 msgstr ""
 
-#: .\catalog\models.py:46
+#: .\catalog\models.py:48
 msgid "Select a genre for this book"
 msgstr "Chọn thể loại cho cuốn sách này"
 
-#: .\catalog\models.py:63
+#: .\catalog\models.py:66
 msgid "Unique ID for this particular book across whole library"
 msgstr "ID duy nhất cho cuốn sách cụ thể này trên toàn bộ thư viện"
 
-#: .\catalog\templates\base_generic.html:21
-msgid "Home"
-msgstr "Trang chủ"
-
-#: .\catalog\templates\base_generic.html:22
-msgid "All books"
-msgstr "Tất cả sách"
-
-#: .\catalog\templates\base_generic.html:23
-#, fuzzy
-#| msgid "All books"
-msgid "All authors"
-msgstr "Tất cả tác giả"
-
-#: .\catalog\templates\catalog\book_detail.html:8
+#: .\catalog\templates\catalog\book_detail.html:9
 msgid "Title:"
 msgstr "Tiêu đề"
 
-#: .\catalog\templates\catalog\book_detail.html:11
+#: .\catalog\templates\catalog\book_detail.html:12
 #, fuzzy
 #| msgid "Authors:"
 msgid "Author:"
 msgstr "Tác giả:"
 
-#: .\catalog\templates\catalog\book_detail.html:16
+#: .\catalog\templates\catalog\book_detail.html:17
 msgid "Summary:"
 msgstr "Tóm tắt"
 
-#: .\catalog\templates\catalog\book_detail.html:17
+#: .\catalog\templates\catalog\book_detail.html:18
 #, python-format
 msgid ""
 "\n"
-"                %(summary)s\n"
-"            "
+"            %(summary)s\n"
+"        "
 msgstr ""
 
-#: .\catalog\templates\catalog\book_detail.html:21
+#: .\catalog\templates\catalog\book_detail.html:22
 msgid "ISBN:"
 msgstr ""
 
-#: .\catalog\templates\catalog\book_detail.html:24
+#: .\catalog\templates\catalog\book_detail.html:25
 msgid "Language:"
 msgstr "Ngôn ngữ"
 
-#: .\catalog\templates\catalog\book_detail.html:25
+#: .\catalog\templates\catalog\book_detail.html:26
 #, python-format
 msgid ""
 "\n"
-"                %(language)s\n"
-"            "
+"            %(language)s\n"
+"        "
 msgstr ""
 
-#: .\catalog\templates\catalog\book_detail.html:29
+#: .\catalog\templates\catalog\book_detail.html:30
 msgid "Genre:"
 msgstr "Thể loại"
 
-#: .\catalog\templates\catalog\book_detail.html:30
+#: .\catalog\templates\catalog\book_detail.html:31
 #, python-format
 msgid ""
 "\n"
-"                %(genre)s\n"
-"            "
+"            %(genre)s\n"
+"        "
 msgstr ""
 
-#: .\catalog\templates\catalog\book_detail.html:35
+#: .\catalog\templates\catalog\book_detail.html:36
 #, fuzzy
 #| msgid "Copies:"
 msgid "Copies"
 msgstr "Bản sao:"
 
-#: .\catalog\templates\catalog\book_detail.html:39
+#: .\catalog\templates\catalog\book_detail.html:40
 #, python-format
 msgid ""
 "\n"
-"                %(copy)s\n"
-"            "
+"                    %(copy)s\n"
+"                "
 msgstr ""
 
-#: .\catalog\templates\catalog\book_detail.html:44
+#: .\catalog\templates\catalog\book_detail.html:45
 msgid "Due to be returned:"
 msgstr "Phải trả lại:"
 
-#: .\catalog\templates\catalog\book_detail.html:46
+#: .\catalog\templates\catalog\book_detail.html:47
 msgid "Imprint:"
 msgstr ""
 
-#: .\catalog\templates\catalog\book_detail.html:47
+#: .\catalog\templates\catalog\book_detail.html:48
 #, python-format
 msgid ""
 "\n"
-"                %(imprint)s\n"
-"            "
-msgstr ""
-
-#: .\catalog\templates\catalog\book_list.html:2
-#, python-format
-msgid " %(page_title)s "
+"                    %(imprint)s\n"
+"                "
 msgstr ""
 
 #: .\catalog\templates\catalog\book_list.html:4
+#, python-format
+msgid " %(title)s "
+msgstr ""
+
+#: .\catalog\templates\catalog\book_list.html:7
 #, fuzzy
 #| msgid "Books:"
 msgid "Book List"
 msgstr "Sách:"
 
-#: .\catalog\templates\catalog\book_list.html:14
+#: .\catalog\templates\catalog\book_list.html:17
 msgid "There are no books in the library."
+msgstr "Không có sách trong thư viện."
+
+#: .\catalog\templates\catalog\bookinstance_list_borrowed_user.html:4
+msgid "Borrowed books"
+msgstr "Sách mượn"
+
+#: .\catalog\templates\catalog\bookinstance_list_borrowed_user.html:15
+#, fuzzy
+#| msgid "There are no books in the library."
+msgid "There are no books borrowed."
 msgstr "Không có sách trong thư viện."
 
 #: .\catalog\templates\index.html:3
@@ -187,15 +183,111 @@ msgstr "Bản sao có sẵn:"
 msgid "Authors:"
 msgstr "Tác giả:"
 
-#: .\catalog\templates\index.html:14
+#: .\catalog\templates\index.html:15
 #, python-format
 msgid "You have visited this page %(num)s time"
 msgstr "Bạn đã truy cập trang này %(num)s lần"
 
-#: .\locallibrary\settings.py:119
+#: .\catalog\templates\registration\logged_out.html:4
+msgid "Logged out!"
+msgstr "Đã đăng xuất!"
+
+#: .\catalog\templates\registration\logged_out.html:5
+msgid "Click here to login again."
+msgstr "Nhấn vào đây để đăng nhập lại."
+
+#: .\catalog\templates\registration\login.html:5
+msgid "Your username and password didn't match. Please try again."
+msgstr "Tên người dùng và mật khẩu của bạn không khớp. Vui lòng thử lại."
+
+#: .\catalog\templates\registration\login.html:12
+msgid "Please login to see this page."
+msgstr "Vui lòng đăng nhập để xem trang này."
+
+#: .\catalog\templates\registration\login.html:20
+#, fuzzy, python-format
+#| msgid "%(username_label)s"
+msgid "%(username_label)s"
+msgstr "Tên đăng nhập"
+
+#: .\catalog\templates\registration\login.html:26
+#, fuzzy, python-format
+#| msgid "%(username_label)s"
+msgid "%(pass_label)s"
+msgstr "Mật khẩu"
+
+#: .\catalog\templates\registration\login.html:31
+msgid "login"
+msgstr "Đăng nhập"
+
+#: .\catalog\templates\registration\login.html:35
+msgid "Lost password?"
+msgstr "Quên mật khẩu?"
+
+#: .\catalog\templates\registration\password_reset_confirm.html:4
+msgid "Please enter (and confirm) your new password."
+msgstr "Vui lòng nhập (và xác nhận) mật khẩu mới của bạn."
+
+#: .\catalog\templates\registration\password_reset_confirm.html:11
+msgid "New Password:"
+msgstr "Mật khẩu mới:"
+
+#: .\catalog\templates\registration\password_reset_confirm.html:20
+msgid "Confirm Password:"
+msgstr "Xác nhận mật khẩu:"
+
+#: .\catalog\templates\registration\password_reset_confirm.html:27
+msgid "Change my password"
+msgstr "Thay đổi mật khẩu của tôi"
+
+#: .\catalog\templates\registration\password_reset_confirm.html:32
+msgid "Password reset failed"
+msgstr "Đặt lại mật khẩu không thành công"
+
+#: .\catalog\templates\registration\password_reset_email.html:4
+msgid "Follow the link below:"
+msgstr "Theo liên kết dưới đây:"
+
+#: .\catalog\templates\registration\password_reset_form.html:10
+#, fuzzy
+#| msgid "Lost password?"
+msgid "Reset password"
+msgstr "Quên mật khẩu?"
+
+#: .\catalog\templates\sidebar.html:3
+msgid "Home"
+msgstr "Trang chủ"
+
+#: .\catalog\templates\sidebar.html:4
+msgid "All books"
+msgstr "Tất cả sách"
+
+#: .\catalog\templates\sidebar.html:5
+msgid "All authors"
+msgstr "Tất cả tác giả"
+
+#: .\catalog\templates\sidebar.html:7
+msgid "User:"
+msgstr "Người dùng:"
+
+#: .\catalog\templates\sidebar.html:8
+msgid "My Borrowed"
+msgstr "Sách đã mượn"
+
+#: .\catalog\templates\sidebar.html:9
+msgid "Logout"
+msgstr "Đăng xuất"
+
+#: .\catalog\templates\sidebar.html:11
+#, fuzzy
+#| msgid "login"
+msgid "Login"
+msgstr "Đăng nhập"
+
+#: .\locallibrary\settings.py:121
 msgid "English"
 msgstr ""
 
-#: .\locallibrary\settings.py:120
+#: .\locallibrary\settings.py:122
 msgid "Vietnamese"
-msgstr ""
+msgstr "Tiếng Việt"

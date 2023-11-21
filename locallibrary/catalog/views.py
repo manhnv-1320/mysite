@@ -1,9 +1,12 @@
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render, get_object_or_404
 from django.views import generic
 
 from .models import Book, BookInstance, Author
 
 
+@login_required
 def index(request):
     num_books = Book.objects.count()
     num_instances = BookInstance.objects.count()
@@ -23,7 +26,7 @@ def index(request):
     return render(request, 'index.html', context=context)
 
 
-class BookListView(generic.ListView):
+class BookListView(LoginRequiredMixin, generic.ListView):
     model = Book
     context_object_name = 'book_list'
     template_name = 'catalog/book_list.html'
@@ -44,3 +47,13 @@ def book_detail(request, pk):
     }
 
     return render(request, 'catalog/book_detail.html', context=context)
+
+
+class LoanedBooksByUserListView(LoginRequiredMixin, generic.ListView):
+    model = BookInstance
+    context_object_name = 'bookinstance_list'
+    template_name = 'catalog/bookinstance_list_borrowed_user.html'
+    paginate_by = 1
+
+    def get_queryset(self):
+        return BookInstance.objects.filter(borrower=self.request.user, status__exact='o').order_by('due_back')
