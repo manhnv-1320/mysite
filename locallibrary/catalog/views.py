@@ -101,6 +101,23 @@ class AllBorrowedBooksListView(LoginRequiredMixin, UserPassesTestMixin, generic.
         return BookInstance.objects.filter(status__exact='o').order_by('due_back')
 
 
+class AuthorListView(generic.ListView):
+    model = Author
+    context_object_name = 'author_list'
+    template_name = 'catalog/author_list.html'
+    paginate_by = 1
+
+    def get_context_data(self, **kwargs):
+        context = super(AuthorListView, self).get_context_data(**kwargs)
+
+        context['page_title'] = 'Authors'
+        return context
+
+
+def author_detail():
+    pass
+
+
 class AuthorCreate(CreateView):
     model = Author
     fields = ['first_name', 'last_name', 'date_of_birth', 'date_of_death']
