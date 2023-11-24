@@ -8,4 +8,6 @@ urlpatterns = [
     path('token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     path('v1/books/', views.BookList.as_view(), name='book_list'),
     path('v1/books/<int:pk>/', views.BookDetail.as_view(), name='book_detail'),
+    path('v1/allborrowed/', views.AllBorrowedList.as_view(), name='allborrowed_list'),
+    path('v1/books/<uuid:pk>/renew/', views.RenewBook.as_view(), name='book_renew'),
 ]
