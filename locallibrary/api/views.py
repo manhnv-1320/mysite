@@ -4,7 +4,8 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework import status
 
-from api.serializers import BookSerializer
+from api.permissions import CanMarkReturned
+from api.serializers import BookSerializer, RenewBookSerializer, BookInstanceSerializer
 from catalog.models import Book, BookInstance
 
 
@@ -58,3 +59,31 @@ class BookDetail(APIView):
         book.delete()
 
         return Response(status=status.HTTP_204_NO_CONTENT)
+
+
+class AllBorrowedList(APIView):
+    permission_classes = (IsAuthenticated, )
+
+    def get(self, request):
+        book_instances = BookInstance.objects.all()
+        data = BookInstanceSerializer(book_instances, many=True).data
+        return Response(data)
+
+
+class RenewBook(APIView):
+    permission_classes = (IsAuthenticated, CanMarkReturned)
+
+    def get_object(self, pk):
+        try:
+            return BookInstance.objects.get(pk=pk)
+        except BookInstance.DoesNotExist:
+            raise Http404
+
+    def post(self, request, pk):
+        book_instance = self.get_object(pk)
+        serializer = RenewBookSerializer(book_instance, data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
